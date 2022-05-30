@@ -23,7 +23,8 @@ publish_function_code(){
 }
 
 update_function_layers(){
-	echo "Using the layer in the function..."
+	echo "Using the layer in the function, wainting 5 seconds to update layer"
+	sleep 5
 	aws lambda update-function-configuration --function-name "${INPUT_LAMBDA_FUNCTION_NAME}" --layers "${INPUT_LAMBDA_LAYER_ARN}:${LAYER_VERSION}"
 }
 
